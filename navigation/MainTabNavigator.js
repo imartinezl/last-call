@@ -13,6 +13,8 @@ import SettingsScreen from '../screens/SettingsScreen';
 
 console.disableYellowBox = true;
 
+
+
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
 });

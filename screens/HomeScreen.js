@@ -7,8 +7,6 @@ import Swipe from '../components/Swipe';
 import Lottie from 'lottie-react-native'
 
 
-import * as firebase from 'firebase';
-
 // Initialize Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyC53vitNexyH1m5pc4YTVFkqUVI1fbK2F0",
@@ -16,6 +14,7 @@ const firebaseConfig = {
   databaseURL: "https://last-call-d1412.firebaseio.com",
 };
 
+import * as firebase from 'firebase';
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
@@ -77,10 +76,10 @@ export default class HomeScreen extends React.Component {
   }
   _showAlert(){
     Alert.alert(
-      'Alert Title',
-      'My Alert Msg',
+      'Ya tienes tu reserva!',
+      'A ZAPAR!!!',
       [
-        {text: 'OK', onPress: () => this._stopAnimation()},
+        {text: 'GUAY:)', onPress: () => this._stopAnimation()},
       ],
       { cancelable: false }
     )
