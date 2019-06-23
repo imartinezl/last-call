@@ -39,7 +39,12 @@ async function loadResourcesAsync() {
       ...Ionicons.font,
       // We include SpaceMono because we use it in HomeScreen.js. Feel free to
       // remove this if you are not using it in your app
-      'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
+      'archia-regular': require('./assets/fonts/Archia-Regular.otf'),
+      'archia-medium': require('./assets/fonts/Archia-Medium.otf'),
+      'archia-semibold': require('./assets/fonts/Archia-SemiBold.otf'),
+      'archia-thin': require('./assets/fonts/Archia-Thin.otf'),
+      'archia-light': require('./assets/fonts/Archia-Light.otf'),
+      'archia-bold': require('./assets/fonts/Archia-Bold.otf'),
     }),
   ]);
 }

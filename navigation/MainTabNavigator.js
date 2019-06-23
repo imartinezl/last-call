@@ -7,37 +7,54 @@ import {
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import DescuentosScreen from '../screens/DescuentosScreen';
+import ReservasScreen from '../screens/ReservasScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+
+console.disableYellowBox = true;
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
 });
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+  tabBarLabel: 'Ofertas Flash',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+          ? `ios-flash${focused ? '' : '-outline'}`
+          : 'md-flash'
       }
     />
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const DescuentosStack = createStackNavigator({
+  Links: DescuentosScreen,
 });
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+DescuentosStack.navigationOptions = {
+  tabBarLabel: 'Descuentos',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+      name={Platform.OS === 'ios' ? 'ios-pricetag' : 'md-pricetag'}
+    />
+  ),
+};
+
+const ReservasStack = createStackNavigator({
+  Settings: ReservasScreen,
+});
+
+ReservasStack.navigationOptions = {
+  tabBarLabel: 'Reservas',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-restaurant' : 'md-restaurant'}
     />
   ),
 };
@@ -47,17 +64,18 @@ const SettingsStack = createStackNavigator({
 });
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+  tabBarLabel: 'Perfil',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+      name={Platform.OS === 'ios' ? 'ios-person' : 'md-person'}
     />
   ),
 };
 
 export default createBottomTabNavigator({
   HomeStack,
-  LinksStack,
+  DescuentosStack,
+  ReservasStack,
   SettingsStack,
 });
