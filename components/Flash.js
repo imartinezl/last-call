@@ -8,34 +8,34 @@ const height = widthB*0.8;
 
 const K = 0.15;
 const A = 0.25;
-const nombre = "Restaurante Paco"
-const descripcion = "Menu Hamburguesa + Patatas + Bebida"
-const tags = ["italiano", "superb"];
-const personasInicial = 0;
-const precioInicial = 15;
-const precioMinimo = 14.50;
-const precioMaximo = 18;
-const timerInicial = 60;
-
-
 
 //export default function Flash(props) {
 export default class Flash extends React.Component {
   constructor(props) {
     super(props);
+    let images = []
+  	console.log(this.props.data.fotos)
+  	for (var i = 0; i < this.props.data.fotos.length; i++) {
+  		images.push({
+		    key:   i,
+		    source: {uri: this.props.data.fotos[i]}
+		});
+  	}
     this.state = {
-    	randomNumber: 0,
-    	timer: timerInicial,
-    	precio: precioInicial,
+    	timer: this.props.data.tiempo,
+    	precio: this.props.data.precio_inicial,
     	personas: 0,
     	personasIncr: 10,
     	comensales: 1,
+    	images: images
+    	
     }   
+    this.convertImages = this.convertImages.bind(this);
   }
   precioCalc(precio){
   	let p = precio - K + A*(Math.random());
-  	p = Math.max(precioMinimo, p);
-  	p = Math.min(precioMaximo, p);
+  	p = Math.max(this.props.data.precio_minimo, p);
+  	p = Math.min(this.props.data.precio_maximo, p);
   	return(p)
   }
   personasCalc(personas, personasIncr){
@@ -56,6 +56,20 @@ export default class Flash extends React.Component {
   	this.setState((prevState) =>({
   		comensales: Math.max(1, prevState.comensales - 1)
   	}))
+  }
+  convertImages(){
+  	let images = []
+  	console.log(this.props.data.fotos)
+  	for (var i = 0; i < this.props.data.fotos.length; i++) {
+  		images.push({
+		    key:   i,
+		    source: {uri: this.props.data.fotos[i]}
+		});
+  	}
+  	console.log(images)
+  	this.setState({
+  		images: images
+  	})
   }
 
 	componentDidMount(){
@@ -88,31 +102,33 @@ export default class Flash extends React.Component {
 			pagingEnabled
 			showsHorizontalScrollIndicator={false}
 		>
-			{images.map((image) => (
+			{this.state.images.map((image) => (
 			  <Image key={image.key} style={styles.image} source={image.source} />
 			))}
 		</ScrollView>
+
     	<Text style={styles.nombre}>
-    		{nombre}
+    		{this.props.data.nombre}
     	</Text>
     	<Text style={styles.descripcion}>
-    		{descripcion}
+    		{this.props.data.descripcion}
     	</Text>
-    	<FlatList data={tags} horizontal={true} style={styles.tags} renderItem={
+    	<FlatList data={this.props.data.tags} horizontal={true} style={styles.tags} renderItem={
     		({item, index}) => <Text key={index} style={styles.tag}>{item}</Text>
     	}/>
 
-
-    	
     	<View style={styles.comensalescontainer}>
 	    	<Button
 			  onPress={this.restarComensal.bind(this)}
 			  title="-"
 			  color="#7745C0"
 			/>
-	    	<Text style={styles.comensales}>
+			<View style={styles.comensales}>
+			<Ionicons name={"ios-person"} size={24} style={styles.icon} color={'black'}/>
+	    	<Text style={styles.comensalesText}>
 	    		{this.state.comensales}
 	    	</Text>
+	    	</View>
 	    	<Button
 			  onPress={this.sumarComensal.bind(this)}
 			  title="+"
@@ -120,6 +136,19 @@ export default class Flash extends React.Component {
 			>
 			<Text style={styles.button}>+</Text>
 			</Button>
+		</View>
+		<View style={styles.sliderContainer}>
+    	  <Slider
+		    style={styles.slider}
+		    trackStyle={styles.trackStyle}
+		    minimumValue={0}
+		    maximumValue={1}
+		    minimumTrackTintColor="#FFFFFF"
+		    maximumTrackTintColor="#000000"
+		    value={this.state.timer/this.props.data.tiempo}
+		    disabled={true}
+
+		  />
 		</View>
 
 		<View style={styles.stats}>
@@ -142,19 +171,7 @@ export default class Flash extends React.Component {
 				</Text>
     		</View>
 	    </View>
-
-
-    	  <Slider
-		    style={{width: 200, height: 20}}
-		    minimumValue={0}
-		    maximumValue={1}
-		    minimumTrackTintColor="#FFFFFF"
-		    maximumTrackTintColor="#000000"
-		    value={this.state.timer/timerInicial}
-		    disabled={true}
-		  />
-
-    	
+	
 
          
 
@@ -190,12 +207,22 @@ const styles = StyleSheet.create({
   },
   comensalescontainer:{
     flexDirection: 'row',
+    alignItems:'center',
+    justifyContent:'center',
+    marginTop: '3%',
+    marginBottom: '3%'
   },
   comensales:{
+  	flexDirection:'row',
+  	marginTop: 5, 
+  	width: 40, 
+  	marginLeft: '3%',
+    marginRight: '3%'
+  },
+  comensalesText:{
   	fontSize: 20,
     fontFamily: 'archia-bold',
-    marginLeft: '3%',
-    marginRight: '3%'
+    marginLeft: '5%',
   },
   button:{
   	backgroundColor: 'black',
@@ -209,12 +236,12 @@ const styles = StyleSheet.create({
   },
   descripcion:{
 	fontFamily: 'archia-bold',
-    marginTop: '1%',
+    marginTop: '2%',
     alignSelf: 'center'
   },
   tags:{
   	alignSelf: 'center',
-  	marginTop: '1%'
+  	marginTop: '2%'
   },
   tag:{
   	backgroundColor:'#ddd',
@@ -243,7 +270,15 @@ const styles = StyleSheet.create({
 	color: 'black',
 	fontSize: 30,
   	fontFamily: 'archia-bold',
-  }
+  },
+  sliderContainer:{
+  	alignItems: 'center',
+  	justifyContent: 'center'
+  },
+  slider:{
+  	width: '94%',
+
+  },
 });
 
 const images2 = [

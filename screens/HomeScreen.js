@@ -6,23 +6,73 @@ import Flash from '../components/Flash';
 import Swipe from '../components/Swipe';
 import Lottie from 'lottie-react-native'
 
+
+import * as firebase from 'firebase';
+
+// Initialize Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyC53vitNexyH1m5pc4YTVFkqUVI1fbK2F0",
+  authDomain: "last-call-d1412.firebaseapp.com",
+  databaseURL: "https://last-call-d1412.firebaseio.com",
+};
+
+firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
+
+
 export default class HomeScreen extends React.Component {
 
   constructor(props){
-    super(props)
+    super(props);
+    console.ignoredYellowBox = ['Setting a timer'];
+    console.disableYellowBox = true;
     this.state = {
       animation: null,
+      id: 0,
+      loaded: false
 
     }
-    //this._stopAnimation = this._stopAnimation.bind(this);
+    this.swiped = this.swiped.bind(this);
+    this.getFromFirebase(database, 'flash/0')
   }
+  componentDidMount(){
+      database.ref('flash/' + this.state.id).on('value', (snapshot) => {
+        const highscore = snapshot.val();
+        console.log("New high score: " + highscore.descripcion);
+      })
+
+  }
+  getFromFirebase(database, key){
+    console.log('[[[ GETTING ',key);
+    database.ref(key).once('value', snapshot => {
+      let data = snapshot.val()
+      this.setState({
+        data: data
+      })
+    }).then(() => {
+      let songsOpened = [];
+      this.setState({
+        loaded: true,
+      },()=>{
+        console.log("DATA LOADED");
+      })
+    });
+}
+
+
 
 
   swiped(d){
     console.log("Swiped: ", d);
     this._playAnimation();
-    setTimeout(() => {this._showAlert()}, 1000)
-    //this._showAlert();
+    setTimeout(() => {this._showAlert(); this._stopAnimation()}, 1200)
+    this.setState((prevState)=> ({
+       id: Math.min(3, prevState.id + 1)
+     }), ()=>{
+      console.log(this.state.id);
+      this.getFromFirebase(database, 'flash/' + this.state.id)
+    })
+
 
   }
   _showAlert(){
@@ -69,6 +119,8 @@ export default class HomeScreen extends React.Component {
   return (
     <View style={styles.container}>
         <StatusBar hidden={true} />
+        {this.state.loaded ? (
+          <View>
         {this.state.animation &&
           <Lottie
             ref={animation => {
@@ -78,7 +130,7 @@ export default class HomeScreen extends React.Component {
               width: 400,
               height: 400,
               backgroundColor: '#00000000',
-              zIndex: 10,
+              elevation: 21,
               position: 'absolute',
               marginTop: '15%'
             }}
@@ -99,11 +151,13 @@ export default class HomeScreen extends React.Component {
         </Text>
         <View style={styles.flash}>
         </View>
-        <Flash/>
+        <Flash data={this.state.data}/>
         <Swipe
         onRef={ref => (this.swipe = ref)}
         swiped = {this.swiped.bind(this)}/>
-
+        </View>
+        ) : (<View></View>)
+      }
 
 
         
@@ -137,7 +191,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   },
   subtitle:{
-    fontSize: 11,
+    fontSize: 12,
     color: '#aaa',
     fontFamily: 'archia-regular',
     marginTop: '3%',

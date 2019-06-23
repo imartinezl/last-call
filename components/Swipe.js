@@ -35,7 +35,7 @@ export default class Swipe extends React.Component {
 
   render() {
   return (
-    <View>
+    <View style={styles.container}>
       <Swipeable 
       style={styles.swipe} 
       leftContent={leftContent} 
@@ -52,7 +52,6 @@ export default class Swipe extends React.Component {
           </View>
       </Swipeable>
 
-
     </View>
   );
   } 
@@ -61,14 +60,16 @@ const leftContent = <Text></Text>;
 
 
 const styles = StyleSheet.create({
+  container:{
+      top: '-10%',
+      elevation: 20,
+  },
   swipe:{
       backgroundColor: '#7745C0',
       height: 60,
-      marginLeft: '3%',
-      marginRight: '3%',
+      marginLeft: '5%',
+      marginRight: '5%',
       borderRadius: 60,
-      position: 'absolute',
-      top: 0
     },
     content:{
       flex: 1,
@@ -80,11 +81,11 @@ const styles = StyleSheet.create({
     },
     swipeText:{
       fontSize: 20,
-      color: 'white',
+      color: '#FAFAFC',
       fontFamily: 'archia-bold',
       marginTop: '5%',
       marginLeft: '12%',
-    }
+    },
   
   
 });
