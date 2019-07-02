@@ -11,7 +11,6 @@ This project was developed during the StartUp Weekend Gastronomy organized by th
 - Silvia Rozas - s.rozas.fuertes@gmail.com
 
 
-
 --------------------------------------------------------------------------------------------------------------------------------
 
 ## Project Summary
@@ -31,8 +30,8 @@ During this event, we had the opportunity to get to know the experience and visi
 
 Spanish press coverage: 
 
-- [Gastroeconomy](https://www.gastroeconomy.com/2019/07/startup-weekend-gastronomy-de-basque-culinary-center-claves-del-emprendimiento-digital-en-gastronomia/)
-- [TerritorioGastronomico](http://territoriogastronomico.com/noticias/trust-eat-ganador-del-encuentro-san-sebastian-gastronomy-startup-weekend)
+- [Gastro Economy](https://www.gastroeconomy.com/2019/07/startup-weekend-gastronomy-de-basque-culinary-center-claves-del-emprendimiento-digital-en-gastronomia/)
+- [Territorio Gastronomico](http://territoriogastronomico.com/noticias/trust-eat-ganador-del-encuentro-san-sebastian-gastronomy-startup-weekend)
 
 ## Project Deliverables
 
