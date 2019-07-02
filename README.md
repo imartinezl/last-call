@@ -1,30 +1,35 @@
 # last-call
 
+This project was developed during the StartUp Weekend Gastronomy organized by the Basque Culinary Center. "Last Call" team:
+
 Andrea Escribano - andrea@aldra.coop
+
 Andrés Díaz - andres.diaz@alumni.bculinary.com
+
 Iñigo Martinez - inigomlap@gmail.com
+
 Edgar Pons -  edgarponsforn@gmail.com
+
 Silvia Rozas - s.rozas.fuertes@gmail.com
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-¿En qué consiste vuestro proyecto?
+## Project Summary
 
-The Last Call propone atraer comensales a los restaurantes durante las horas de baja afluencia.
-Para ello, hemos creado una app en la que los restaurantes ponen a subasta las mesas vacías, y lanzan ofertas flash, de tiempo limitado, para cubrir periodos de baja actividad.
+"The Last Call" proposes to attract customers to the restaurants during the hours of low affluence.
+To do this, we've created an app in which restaurants auction off empty tables, and launch time-limited flash bids to cover periods of low activity.
 
-¿Qué aporta al sector hostelero?
+Through this application, we helps restaurants to increase the number of customers during the hours of low affluence, creating new moments of consumption. In addition, we improve the promotion of local restaurants, and offer them information about their target customers. On the other hand, we generate new consumption ideas for users, informing them in real time of large discounts in the area.
 
-A través de esta aplicación, conseguimos aumentar el número de clientes durante las horas de baja afluencia, creando nuevos momentos de consumo. Además, mejoramos la promoción de los restaurantes locales, y les ofrecemos información sobre su cliente objetivo. Por otro lado, generamos nuevas ideas de consumo para los usuarios, informándoles al momento de grandes descuentos en la zona.
+Throughout the weekend we have been learning from the feedback of restaurants and diners, modifying our business model and polishing all the details to make this a viable project. This project has been focused on a continuous validation work and the presentation of an attractive business model.
 
-¿Por qué pensáis que ha sido premiado?
+## Startup Weekend: Gastronomy
 
-Durante todo el fin de semana hemos ido aprendiendo del feedback de restaurantes y comensales, modificando nuestro modelo de negocio y puliendo todos los detalles para hacer de este un proyecto viable. Es por ello que creemos que este continuo trabajo de validación y la presentación de un modelo de negocio atractivo nos han dado méritos para este premio.
+During this event, we had the opportunity to get to know the experience and vision of professionals from different sectors: entrepreneurs, investors, developers, designers, and of course gastronomy experts.
 
-¿Os planteáis seguir adelante y hacerlo realidad?
+Spanish press coverage: 
 
-Estamos considerando la posibilidad de seguir con el proyecto y buscando los medios para ello. Somos jóvenes con inquietudes similares pero con la desventaja de no vivir en una misma zona. Ahora estamos buscando los recursos para poder seguir con el proyecto a distancia.
+- [Gastroeconomy](https://www.gastroeconomy.com/2019/07/startup-weekend-gastronomy-de-basque-culinary-center-claves-del-emprendimiento-digital-en-gastronomia/)
+- [TerritorioGastronomico](http://territoriogastronomico.com/noticias/trust-eat-ganador-del-encuentro-san-sebastian-gastronomy-startup-weekend)
 
-¿Qué os ha parecido la experiencia de este fin de semana?
 
-La verdad que hemos aprendido muchísimo, es un evento muy gratificante. Por un lado, hemos tenido la oportunidad de conocer la experiencia y visión de profesionales de distintos sectores: emprendedores, inversores, desarrolladores, diseñadores, y por supuesto expertos en gastronomía. Es un fin de semana diferente, intenso, pero en muy buena compañía. Es sorprendente ver cómo 5 personas que no se conocían de nada y con talentos muy dispares pueden trabajar en equipo y desarrollar, en un fin de semana, un proyecto innovador. Nos vamos con ganas de repetir.
