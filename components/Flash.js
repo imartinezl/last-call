@@ -32,6 +32,25 @@ export default class Flash extends React.Component {
     }   
     this.convertImages = this.convertImages.bind(this);
   }
+  componentWillReceiveProps(){
+    let images = []
+    console.log(this.props.data.fotos)
+    for (var i = 0; i < this.props.data.fotos.length; i++) {
+      images.push({
+        key:   i,
+        source: {uri: this.props.data.fotos[i]}
+    });
+    }
+    this.setState({
+      timer: this.props.data.tiempo,
+      precio: this.props.data.precio_inicial,
+      personas: 0,
+      personasIncr: 10,
+      comensales: 1,
+      images: images
+      
+    }) 
+  }
   precioCalc(precio){
   	let p = precio - K + A*(Math.random());
   	p = Math.max(this.props.data.precio_minimo, p);
