@@ -77,7 +77,7 @@ export default class HomeScreen extends React.Component {
   _showAlert(){
     Alert.alert(
       'Ya tienes tu reserva!',
-      'A ZAPAR!!!',
+      'A ZAMPAR!!!',
       [
         {text: 'GUAY:)', onPress: () => this._stopAnimation()},
       ],
