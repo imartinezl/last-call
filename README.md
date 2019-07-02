@@ -1,20 +1,22 @@
 # last-call
 
-This project was developed during the StartUp Weekend Gastronomy organized by the Basque Culinary Center. "Last Call" team:
+This project was developed during the StartUp Weekend Gastronomy organized by the Basque Culinary Center. 
 
-Andrea Escribano - andrea@aldra.coop
+#### LastCall Team
 
-Andrés Díaz - andres.diaz@alumni.bculinary.com
+- Andrea Escribano - andrea@aldra.coop
+- Andrés Díaz - andres.diaz@alumni.bculinary.com
+- Iñigo Martinez - inigomlap@gmail.com
+- Edgar Pons -  edgarponsforn@gmail.com
+- Silvia Rozas - s.rozas.fuertes@gmail.com
 
-Iñigo Martinez - inigomlap@gmail.com
 
-Edgar Pons -  edgarponsforn@gmail.com
-
-Silvia Rozas - s.rozas.fuertes@gmail.com
 
 --------------------------------------------------------------------------------------------------------------------------------
 
 ## Project Summary
+
+<img align="right" width="350px" src="docs/Videos/app_demo.gif"/>
 
 "The Last Call" proposes to attract customers to the restaurants during the hours of low affluence.
 To do this, we've created an app in which restaurants auction off empty tables, and launch time-limited flash bids to cover periods of low activity.
@@ -31,5 +33,22 @@ Spanish press coverage:
 
 - [Gastroeconomy](https://www.gastroeconomy.com/2019/07/startup-weekend-gastronomy-de-basque-culinary-center-claves-del-emprendimiento-digital-en-gastronomia/)
 - [TerritorioGastronomico](http://territoriogastronomico.com/noticias/trust-eat-ganador-del-encuentro-san-sebastian-gastronomy-startup-weekend)
+
+## Project Deliverables
+
+#### Customer Experience
+<img src="docs/Customer experience.jpg"/>
+
+#### Market Competitors
+<img src="docs/ANALISIS DE COMPETIDORES.JPEG"/>
+
+#### Initial Inversion
+<img src="docs/Inversion/inversion_3.jpg"/>
+
+#### Advertisement
+<p align="center">
+    <img width="400px" src="docs/Videos/add.gif"/>
+</p>
+
 
 
