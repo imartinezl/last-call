@@ -1,0 +1,50 @@
+{
+  "flash" : [ {
+    "descripcion" : "Cocina típica vasca de menú del día",
+    "estrellas" : 4,
+    "fotos" : [ "http://www.menu-diario.com/wp-content/uploads/2016/12/166588-euskalduna-taberna-servicio-de-cocina-casera-2.jpg", "https://u.tfstatic.com/restaurant_photos/423/405423/169/612/euskalduna-taberna-sugerencia-del-chef-c907a.jpg" ],
+    "likes" : 442,
+    "nombre" : "Taberna Euskalduna",
+    "precio_inicial" : 10,
+    "precio_maximo" : 11,
+    "precio_minimo" : 8,
+    "tags" : [ "menúdiario", "vasco" ],
+    "tiempo" : 900
+  },
+{
+    "descripcion" : "Restaurante y sidrería en zarautz",
+    "estrellas" : 4.5,
+    "fotos" : [ "http://www.costavasca.org/costavasca/UsuariosFtp/conexion/DMPOI_IMAGENES343a.jpg", "https://media-cdn.tripadvisor.com/media/photo-s/0e/fb/4c/69/photo0jpg.jpg" ],
+    "likes" : 263,
+    "nombre" : "Arizia Sidreria",
+    "precio_inicial" : 34,
+    "precio_maximo" : 35,
+    "precio_minimo" : 30,
+    "tags" : [ "asador", "española" ],
+    "tiempo" : 1200
+  },
+{
+    "descripcion" : "Tasca de cocina casera",
+    "estrellas" : 3,
+    "fotos" : [ "https://console.listae.com/files/2019/02/meson_la_alfareria_madrid_torrijas.jpg", "https://media-cdn.tripadvisor.com/media/photo-s/05/c9/83/61/rulo-de-calabacin-relleno.jpg" ],
+    "likes" : 410,
+    "nombre" : "Meson la Alfarería",
+    "precio_inicial" : 18,
+    "precio_maximo" : 20,
+    "precio_minimo" : 15,
+    "tags" : [ "desayunos", "tradicional" ],
+    "tiempo" : 900
+  },
+{
+    "descripcion" : "Extraordinaria comida tradicional",
+    "estrellas" : 4,
+    "fotos" : [ "http://www.restaurantevivares.com/wp-content/themes/Vivares/images/photos/privadovivares.jpg", "https://www.lookoutpro.com/wp-content/uploads/2018/02/Planes-foody.jpg" ],
+    "likes" : 290,
+    "nombre" : "Restaurante Vivares",
+    "precio_inicial" : 11,
+    "precio_maximo" : 12,
+    "precio_minimo" : 9,
+    "tags" : [ "mediterranea", "española" ],
+    "tiempo" : 600
+  } ]
+}
