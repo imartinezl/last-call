@@ -46,7 +46,7 @@ Spanish press coverage:
 
 #### Advertisement
 <p align="center">
-    <img width="400px" src="docs/Videos/add.gif"/>
+    <img width="400px" src="docs/Videos/advertisement.gif"/>
 </p>
 
 
